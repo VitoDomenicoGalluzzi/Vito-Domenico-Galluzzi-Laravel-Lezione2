@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContattaciMail;
 
 class PublicController extends Controller
 {
@@ -52,5 +54,29 @@ class PublicController extends Controller
             
         }
 
+    }
+
+    public function paginaContattaci() {
+        return view('mail.Contattaci');
+    }
+
+    public function sendMail(Request $request) {
+
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $message = $request->input('message');
+
+        // dd($name,$email,$message);
+
+        $dataToSend=compact('name','email','message');
+
+        Mail::to($email)->send(new ContattaciMail($dataToSend));
+
+
+        return view('mail.Thankyou-Page', ['dati' => $dataToSend])->with('message', 'Richiesta inviata con Successo!');
+    }
+
+    public function tyPage(){
+        return view('mail.Thankyou-Page');
     }
 }

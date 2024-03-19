@@ -22,5 +22,10 @@ Route:: get('/Servizi', [PublicController::class, 'servizi'])-> name('serviziPag
 
 Route::get('/Pagine-Articoli', [PublicController::class, 'pagineArticoli'])-> name('paginaArticoliPage');
 
-route::get('/Pagina-Dettagli/{id}', [PublicController::class, 'paginaDettagli'])-> name('paginaDettagliPage'); 
+Route::get('/Pagina-Dettagli/{id}', [PublicController::class, 'paginaDettagli'])-> name('paginaDettagliPage'); 
+
+Route::get('/Pagina-Contattaci', [PublicController::class, 'paginaContattaci'])-> name('contattaciPage');
+Route::post('/Invia-Mail', [PublicController::class, 'sendMail'])-> name('inviaEmail');
+
+Route::get('/Thankyou-Page', [PublicController::class, 'tyPage'])-> name('thankYouPage');
 

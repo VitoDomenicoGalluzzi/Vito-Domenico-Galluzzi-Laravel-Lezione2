@@ -1,19 +1,19 @@
 <nav class="navbar navbar-expand-lg bg-warning">
     <div class="container-fluid">
-      <a class="navbar-brand fw-bold" href="{{route('homePage')}}">MediaMondo</a>
+      <a class="navbar-brand fw-bold {{Route::currentRouteName() == 'homePage' ? 'text-info' : ''}}" href="{{route('homePage')}}">MediaMondo</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active fw-semibold" aria-current="page" href="{{route('chiSiamoPage')}}">Chi siamo ?</a>
+            <a class="nav-link active fw-semibold {{Route::currentRouteName() == 'chiSiamoPage' ? 'text-info' : ''}}" aria-current="page" href="{{route('chiSiamoPage')}}">Chi siamo ?</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fw-semibold" href="{{route('serviziPage')}}">Servizi</a>
+            <a class="nav-link fw-semibold {{Route::currentRouteName() == 'serviziPage' ? 'text-info' : ''}}" href="{{route('serviziPage')}}">Servizi</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fw-semibold" href="{{route('paginaArticoliPage')}}">Articoli</a>
+            <a class="nav-link fw-semibold {{Route::currentRouteName() == 'paginaArticoliPage' ? 'text-info' : ''}}" href="{{route('paginaArticoliPage')}}">Articoli</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
